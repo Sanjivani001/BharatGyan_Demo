@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BharatGyan - AI Learning Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="BhartGyan.png" alt="BharatGyan Logo" class="logo-img" />
+      BharatGyan
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      &#9776;
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#landing">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <section id="landing" class="section landing">
+    <h1>BharatGyan</h1>
+    <p>India’s AI Powered Personalized Learning Path Generator</p>
+    <a href="#features" class="btn">Explore Features</a>
+  </section>
+
+  <section id="features" class="section features">
+    <h2>Features</h2>
+    <ul>
+      <li>AI-powered mentor for personalized feedback & study planning</li>
+      <li>Gamification to boost engagement and reduce distractions</li>
+      <li>Multilingual support & offline accessibility</li>
+      <li>Dashboards for students, teachers & parents</li>
+      <li>Progress tracking & performance analytics</li>
+      <li>Lecture Chat with Teachers</li>
+      <li>Comprehensive Reports</li>
+    </ul>
+  </section>
+
+  <section id="demo" class="section demo">
+    <h2>Demo</h2>
+
+    <div class="demo-tabs" id="demo-tabs">
+      <button class="tab-btn active" data-target="mentor">AI Mentor Feedback</button>
+      <button class="tab-btn" data-target="planner">Study Planner</button>
+      <button class="tab-btn" data-target="dashboard">Performance Tracker</button>
+      <button class="tab-btn" data-target="gamification">Gamification</button>
+      <button class="tab-btn" data-target="language">Multilingual Support</button>
+      <button class="tab-btn" data-target="offline">Offline Access</button>
+      <button class="tab-btn" data-target="chat">Lecture Chat</button>
+      <button class="tab-btn" data-target="reports">Reports</button>
+    </div>
+
+    <div id="mentor" class="demo-content">
+      <h3>AI Mentor Personalized Feedback</h3>
+      <div class="feedback-box">
+        <p><strong>Student:</strong> Priya</p>
+        <p>Your recent quiz performance shows improvement in mathematics! Focus next on science topics for balanced progress.</p>
+      </div>
+    </div>
+
+    <div id="planner" class="demo-content hidden">
+      <h3>Study Planner</h3>
+      <ul>
+        <li>Complete Math Chapter 5 - Algebra</li>
+        <li>Science Quiz Preparation</li>
+        <li>Language Practice - Vocabulary</li>
+      </ul>
+    </div>
+
+    <div id="dashboard" class="demo-content hidden">
+      <h3>Performance Tracker</h3>
+      <div class="progress-item">
+        <span>Mathematics</span>
+        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+      </div>
+      <div class="progress-item">
+        <span>Science</span>
+        <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+      </div>
+      <div class="progress-item">
+        <span>Language</span>
+        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+      </div>
+    </div>
+
+    <div id="gamification" class="demo-content hidden">
+      <h3>Gamification & Rewards</h3>
+      <p>Points Earned: <strong>3500</strong></p>
+      <div class="badges">
+        <div class="badge">🥇 Consistency Champion</div>
+        <div class="badge">🎯 Quiz Master</div>
+        <div class="badge">🚀 Fast Learner</div>
+      </div>
+    </div>
+
+    <div id="language" class="demo-content hidden">
+      <h3>Multilingual Support</h3>
+      <p>Select Language:</p>
+      <select id="language-select" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="hi">[translate:हिन्दी]</option>
+        <option value="ta">தமிழ்</option>
+        <option value="bn">বাংলা</option>
+      </select>
+      <div id="lang-message">
+        Welcome to BharatGyan! Choose your preferred language for personalized learning.
+      </div>
+    </div>
+
+    <div id="offline" class="demo-content hidden">
+      <h3>Offline Access</h3>
+      <p>This platform supports offline access for key learning materials. You can continue studying even without internet connection.</p>
+      <p>Status: <strong>Online</strong></p>
+      <button onclick="toggleOnlineStatus()">Toggle Online/Offline</button>
+    </div>
+
+    <div id="chat" class="demo-content hidden">
+      <h3>Lecture Chat with Teachers</h3>
+      <div id="chat-box">
+        <div class="chat-msg teacher">Welcome, Priya! How can I assist you today?</div>
+        <div class="chat-msg student">I need help with the latest math assignment.</div>
+        <div class="chat-msg teacher">Sure, let's go over it step-by-step.</div>
+      </div>
+      <input id="chat-input" placeholder="Type message..." />
+      <button onclick="sendMsg()">Send</button>
+    </div>
+
+    <div id="reports" class="demo-content hidden">
+      <h3>Reports</h3>
+      <p>Monthly Learning Report</p>
+      <div class="report-item">
+        <span>Completed Assignments</span>
+        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+      </div>
+      <div class="report-item">
+        <span>Average Quiz Score</span>
+        <div class="progress-bar"><div class="progress-fill" style="width: 78%;"></div></div>
+      </div>
+      <div class="report-item">
+        <span>Attendance Rate</span>
+        <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>About BharatGyan</h2>
+    <p>
+      BharatGyan is an AI-powered personalized learning ecosystem connecting students, teachers, and parents. It uses gamification, personalized feedback, and multilingual support to improve learning outcomes and boost engagement.
+    </p>
+    <p>
+      Developed by TechNari Shakti, this project is part of Smart India Hackathon 2025.
+    </p>
+    <p>
+      <strong>Note:</strong> This is just a demo prototype showcasing the frontend user interface and design concept only. The full functional backend and AI-powered system are under development.
+    </p>
+    <p>
+      <strong>Note:</strong> Visual elements like progress bars in this prototype are simplified representations and can be implemented as advanced charts, graphs, and interactive visuals in the final product.
+    </p>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 BharatGyan - TechNari Shakti
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
